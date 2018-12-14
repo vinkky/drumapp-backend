@@ -77,7 +77,7 @@ uploadTracks : async  (req, res) => {
    bucketName: 'tracks'
  });
 
-
+console.log(req.files);
   for(let i = 0; i<req.files.length; i++) {
    console.log(req.files.length)
    let trackName = req.files[i].originalname.substring(0, req.files[i].originalname.lastIndexOf('.'));
@@ -95,7 +95,6 @@ uploadTracks : async  (req, res) => {
    readableTrackStream.pipe(uploadStream);
 
    console.log(readableTrackStream)
-
 
   }
 
