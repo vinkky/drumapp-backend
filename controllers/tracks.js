@@ -88,16 +88,12 @@ console.log(req.files);
    readableTrackStream.push(req.files[i].buffer);
    readableTrackStream.push(null);
    
- 
-
    let uploadStream = bucket.openUploadStream(trackName);
    let id = uploadStream.id;
    readableTrackStream.pipe(uploadStream);
 
    console.log(readableTrackStream)
-
   }
-
 
   return res.status(200).json({
    err: 'success'
@@ -113,7 +109,6 @@ console.log(req.files);
  
  });
 },
-
 
 // @route GET /files
 // @desc  Display all files in JSON
